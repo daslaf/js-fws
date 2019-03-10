@@ -1,6 +1,7 @@
 {
   "private": true,
   "workspaces": [
+    "backend/*",
     "packages/*"
   ],
   "scripts": {
@@ -11,5 +12,5 @@
   "devDependencies": {
     "lerna": "^3.13.1"
   },
-  "name": "js-frameworks-examples"
+  "name": "js-fws"
 }
