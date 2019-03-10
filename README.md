@@ -1,4 +1,4 @@
-# About this repo
+# About this repo
 
 Once in a while I like to try new libraries, technologies and such and I mostly build toy applications or components in online REPL environments or in my local machine. However, most of these toy applications don't have to deal with the type of problems you'll face when developing a real world application that must work in a production environment.
 
