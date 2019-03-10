@@ -5,5 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "@js-fws/common": "1.0.0"
+  },
+  "scripts": {
+    "test": "echo testing server"
   }
 }
