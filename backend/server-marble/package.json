@@ -1,7 +1,7 @@
 {
   "name": "@js-fws/server-marble",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.ts",
   "license": "MIT",
   "dependencies": {
     "@js-fws/common": "1.0.0",
@@ -9,7 +9,7 @@
     "rxjs": "~6.3.3"
   },
   "scripts": {
-    "start": "ts-node index.ts",
+    "start": "ts-node src/server.ts",
     "test": "echo testing server"
   },
   "devDependencies": {

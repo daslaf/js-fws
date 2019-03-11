@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "noImplicitAny": true,
+    "strictNullChecks": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "./node_modules/@types",
+  ],
+  "exclude": [
+    "**/*.spec.ts"
+  ]
+}
