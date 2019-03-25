@@ -1,3 +1,5 @@
+const COUNTER = '/api/counter';
+
 module.exports = {
-  counter: '/api/counter',
+  COUNTER,
 };

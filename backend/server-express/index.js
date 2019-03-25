@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   res.send(`Hello kitten`);
 });
 
-app.get(endpoint.counter, (req, res) => {
+app.get(endpoint.COUNTER, (req, res) => {
   res.set('Content-Type', 'application/json');
 
   res.send({ counters: [] });
