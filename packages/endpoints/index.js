@@ -1,4 +1,4 @@
-const COUNTER = '/api/counter/';
+const COUNTER = '/counter';
 
 module.exports = {
   COUNTER,

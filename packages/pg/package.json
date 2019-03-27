@@ -2,5 +2,8 @@
   "name": "@js-fws/pg",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^7.9.0"
+  }
 }

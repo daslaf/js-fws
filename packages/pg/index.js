@@ -1,4 +1,4 @@
-const Pool = require('pg').Pool;
+const { Pool } = require('pg');
 const { postgres } = require('../../secrets');
 
 const pool = new Pool(postgres);
