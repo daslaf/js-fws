@@ -1,6 +1,10 @@
+# Folders
 node_modules
 .vscode
 dist
 
 # Logs
 yarn-error.log
+
+# Secret files
+secrets.json
