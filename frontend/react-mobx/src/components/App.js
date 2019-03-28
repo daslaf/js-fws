@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 
-import Store, { initialState } from '../models/counters';
+import CountersStore from '../models/counters';
+import Counters from './Counters';
 
-import CounterMobx from './CounterMobx';
+const App = () => {
+  const store = useContext(CountersStore);
+  
+  useEffect(() => {
+    store.fetchCounters();
+  }, []);
 
-const store = new Store(initialState);
-
-const App = () => (
-  <CounterMobx
-    store={store}
-  />
-);
+  return (
+    <Counters
+      store={store}
+    />
+  );
+};
 
 export default App;

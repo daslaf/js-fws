@@ -1,17 +1,16 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 
-
-const CounterMobx = observer(props => (
+const Counters = observer(({ store }) => (
   <section>
-    <h1>Counters with Mobx</h1>
+    <h1>Counters</h1>
 
     <ul>
-      {props.store.counters.map(counter => (
+      {store.counters.map(counter => (
         <CounterItem
           key={counter.id}
           counter={counter}
-          addCount={props.store.addCount}
+          addCount={store.addCount}
         />
       ))}
     </ul>
@@ -20,8 +19,8 @@ const CounterMobx = observer(props => (
 
 const CounterItem = observer(({ counter, addCount }) => (
   <li onClick={() => addCount(counter.id)}>
-    <strong>{counter.name}</strong>: {counter.count}
+    <strong>{counter.name}</strong>: {counter.value}
   </li>
 ));
 
-export default CounterMobx;
+export default Counters;

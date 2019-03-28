@@ -1,23 +1,40 @@
-import { observable, action } from 'mobx';
+import { createContext } from 'react';
+import { observable, action, flow } from 'mobx';
 
-export const initialState = [
-  { id: 12, name: 'First counter name I can think of', count: 0 },
-  { id: 43, name: 'Kitten request', count: 0 },
-  { id: 25, name: 'Ol\' king Cole was a merry ol\' soul', count: 0 },
-];
+import { getCounters } from '../services';
 
-export default class Store {
+const RequestStatus = {
+  Pending: 'PENDING',
+  Done: 'DONE',
+  Error: 'ERROR'
+};
+
+class CountersStore {
   @observable
   counters = [];
 
-  constructor(counters) {
-    this.counters = counters;
-  }
+  @observable
+  state = RequestStatus.Pending;
 
   @action
   addCount = id => {
     const counter = this.counters.find(c => c.id === id);
 
-    counter.count += 1;
-  }
+    counter.value += 1;
+  };
+
+  fetchCounters = flow(function * () {
+    this.state = RequestStatus.Pending;
+
+    try {
+      const { data } = yield getCounters();
+
+      this.counters = data;
+      this.state = RequestStatus.Done;
+    } catch(e) {
+      this.state = RequestStatus.Error;
+    }
+  });
 };
+
+export default createContext(new CountersStore());
